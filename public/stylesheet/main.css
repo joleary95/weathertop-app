@@ -1,0 +1,11 @@
+.box.is-info {
+    background-color: #ADD8E6 !important;
+    border-style: solid; !important;
+    border-color: dimgray ; !important;
+}
+
+.box.has-text-centered {
+
+    border-style: solid; !important;
+    border-color: dimgray ; !important;
+}

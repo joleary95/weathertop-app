@@ -1,0 +1,70 @@
+<section class="content box">
+  #{list items:_station, as:'station'}
+    <div class="columns">
+      <div class="column">
+        <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
+          <strong class="has-text-white"> ${station.name}</strong>
+        </section>
+      </div>
+      <div class="column">
+        <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
+          <strong class="has-text-white">Weather</strong><br>
+          <p class="has-text-white mt-2">${station.latestReading().weatherDescription()}</p>
+        </section>
+        </div>
+      <div class="column">
+        <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
+          <strong class="has-text-white">Temp</strong>
+          <p class="has-text-white mt-2">${station.latestReading().temp} C <br>
+            ${station.latestReading().Fahrenheit()} F </p>
+        </section>
+      </div>
+      <div class="column">
+        <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
+          <strong class="has-text-white ">Wind</strong>
+          <p class="has-text-white mt-2">${station.latestReading().getWindSpeed()} bft <br>
+            ${station.latestReading().CompassDirection()}</p>
+        </section>
+      </div>
+      <div class="column">
+        <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
+          <strong class="has-text-white ">Pressure</strong><br>
+          <p class="has-text-white mt-2">${station.latestReading().pressure} hpa</p>
+        </section>
+      </div>
+    </div>
+  #{/list}
+<table class="table is-bordered is-striped">
+  <thead>
+  <tr class="subtitle has-background-white-ter">
+    <th>Code</th>
+    <th>Temp</th>
+    <th>Wind Speed</th>
+    <th>Wind Direction</th>
+    <th>Pressure</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  #{list items:_station.readings, as:'reading'}
+  <tr>
+    <td>
+     ${reading.code}
+  </td>
+    <td>
+      ${reading.temp}
+    </td>
+    <td>
+      ${reading.windSpeed}
+    </td>
+    <td>
+      ${reading.windDirection}
+    </td>
+    <td>
+      ${reading.pressure}
+    </td>
+  </tr>
+  #{/list}
+  </tbody>
+</table>
+</section>

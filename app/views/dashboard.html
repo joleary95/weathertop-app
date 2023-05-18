@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+#{set listing:'WeatherTop Stations' /}
+
+#{menu id:"dashboard"/}
+
+#{list items:stations, as:'station'}
+<section class="content box">
+  <h2 class="ui-header">
+    ${station.name}
+  </h2>
+  <a href="/stations/${station.id}" class="icon has-text-primary">
+    <i class="fas fa-folder"></i>
+  </a>
+  <a href="/dashboard/deleteStation/${station.id}" class="icon has-text-danger">
+    <i class="fas fa-trash"></i>
+  </a>
+</section>
+#{/list}
+
+#{addstation /}
+
+
