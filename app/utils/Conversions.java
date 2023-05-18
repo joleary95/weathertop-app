@@ -6,6 +6,18 @@ public class Conversions {
 
         return (temp * 9 / 5) + 32;
     }
+    public static int KmToBeaufort(double km) {
+
+        double [] beaufortScaleConversion = {1,6,12,20,29,39,50,62,75,89,103} ;
+
+        for( int i = 0; i < beaufortScaleConversion.length; i++){
+            if(km < beaufortScaleConversion[i]) {
+                return i;
+            }
+
+            }
+        return 12;
+        }
 
     public static String codeToWeatherDescription(int code) {
 
@@ -59,6 +71,6 @@ public class Conversions {
         double windChill = 13.12 + (0.6215 * temp) - (11.37 * Math.pow(v, 0.16)) +
                 (0.3965 * temp * Math.pow(v, 0.16));
 
-        return windChill;
+        return Math.round(windChill*100.0)/100.0;
     }
 }

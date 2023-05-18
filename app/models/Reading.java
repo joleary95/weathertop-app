@@ -42,15 +42,20 @@ public class Reading extends Model {
         return Conversions.getCompassDirection(windDirection);
     }
 
-    public double windChill(float temp, double v) {
+    public int kmToBeaufort() {
 
-        return Conversions.getWindChill(temp, v);
+        return Conversions.KmToBeaufort(this.windSpeed);
+    }
 
+    public double windChill() {
+
+
+        return Conversions.getWindChill(temp, windSpeed);
     }
     //Getter
-    public int getWindSpeed() {
+    public float getWindSpeed() {
 
-        return (int) Math.floor(this.windSpeed);
+        return this.windSpeed;
     }
     public int getWindDirection() {
 

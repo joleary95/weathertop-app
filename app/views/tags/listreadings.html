@@ -22,8 +22,10 @@
       <div class="column">
         <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
           <strong class="has-text-white ">Wind</strong>
-          <p class="has-text-white mt-2">${station.latestReading().getWindSpeed()} bft <br>
-            ${station.latestReading().CompassDirection()}</p>
+          <p class="has-text-white mt-2">${station.latestReading().kmToBeaufort()} bft <br>
+            ${station.latestReading().CompassDirection()}<br>
+            feels like<br>
+            ${station.latestReading().windChill()}</p>
         </section>
       </div>
       <div class="column">
