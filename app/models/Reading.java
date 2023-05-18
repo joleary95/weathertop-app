@@ -16,7 +16,8 @@ public class Reading extends Model {
 
 
     public Reading(int code, float temp, float windSpeed, int pressure,
-                    int windDirection) {
+                    int windDirection)
+    {
         this.code = code;
         this.temp = temp;
         this.windSpeed = windSpeed;
@@ -27,10 +28,10 @@ public class Reading extends Model {
     public Reading() {
     }
 
-    //Methods to call readings to DashBoard
+    //Methods to call readings to Dashboard
     public float Fahrenheit() {
 
-        return Conversions.celsiusToFahrenheit(temp);
+        return Conversions.celsiusToFahrenheit(this.temp);
     }
     public String weatherDescription() {
 
@@ -39,7 +40,7 @@ public class Reading extends Model {
 
     public String CompassDirection() {
 
-        return Conversions.getCompassDirection(windDirection);
+        return Conversions.getCompassDirection(this.windDirection);
     }
 
     public int kmToBeaufort() {
@@ -49,21 +50,26 @@ public class Reading extends Model {
 
     public double windChill() {
 
-
-        return Conversions.getWindChill(temp, windSpeed);
+        return Conversions.getWindChill(this.temp, this.windSpeed);
     }
+
+
     //Getter
     public float getWindSpeed() {
 
         return this.windSpeed;
     }
+
     public int getWindDirection() {
 
         return Math.round(this.windDirection);
     }
+
     public int getCode() {
         return this.code;
     }
+
+
 
     //Setters
     public void setWindSpeed(float windSpeed) {
