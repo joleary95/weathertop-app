@@ -33,7 +33,7 @@ Station(s1):
  readings:
   - r1
   - r2
-  -
+
 Station(s2):
  name: Dunmore
  latitude: 52.1499994

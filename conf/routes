@@ -4,6 +4,9 @@
 
 # Home page
 GET     /                                       Start.index
+GET    /signup                                  Accounts.signup
+GET    /login                                   Accounts.login
+
 GET     /dashboard                              Dashboard.index
 GET     /about                                  About.index
 GET     /admin                                  Admin.index
@@ -11,6 +14,14 @@ GET     /admin                                  Admin.index
 GET     /stations/{id}                         StationCtrl.index
 
 GET     /dashboard/deleteStation/{id}          Dashboard.deleteStation
+
+GET    /logout                                  Accounts.logout
+
+
+POST   /register                                Accounts.register
+POST   /authenticate                            Accounts.authenticate
+
+
 
 POST    /dashboard/addStation                  Dashboard.addStation
 POST    /stations/{id}/addReadings             StationCtrl.addReadings
