@@ -1,5 +1,7 @@
-# play-template-1
+# weather-app
 
-This is a sample starter project for this course:
+This is a wed-development assaignment 2.
+
+Weather Top Station
 
 - [Web Development](https://reader.tutors.dev/course/wit-hdip-comp-sci-2023-web-dev-1)
