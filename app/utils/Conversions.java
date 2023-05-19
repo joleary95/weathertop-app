@@ -1,10 +1,25 @@
 package utils;
 
-public class Conversions {
+import models.Reading;
+import play.utils.Utils;
+
+import java.util.List;
+
+public class Conversions extends Utils{
 
     public static float celsiusToFahrenheit(float temp) {
 
         return (temp * 9 / 5) + 32;
+    }
+
+    public static float findMaxTemp(List<Reading> readings) {
+        float maxTemp = Float.MIN_VALUE;
+        for (Reading reading : readings) {
+            if (reading.temp > maxTemp) {
+                maxTemp = reading.temp;
+            }
+        }
+        return maxTemp;
     }
     public static int KmToBeaufort(double km) {
 

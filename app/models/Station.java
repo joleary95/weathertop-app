@@ -2,7 +2,7 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import utils.StationAnalytics;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -13,10 +13,12 @@ import play.db.jpa.Model;
 public class Station extends Model
 {
     public String name;
+
     @OneToMany(cascade = CascadeType.ALL)
     public List<Reading> readings = new ArrayList<Reading>();
 
     public Station(String name) {
+
         this.name = name;
     }
 
@@ -36,6 +38,30 @@ public class Station extends Model
         } else
             return null;
 
+    }
+
+    public String displayMaxTemp() {
+        return String.valueOf(StationAnalytics.findMaxTemp(this.readings));
+    }
+
+    public String displayMinTemp() {
+        return String.valueOf(StationAnalytics.findMinTemp(this.readings));
+    }
+
+    public String displayMaxWindSpeed() {
+        return String.valueOf(StationAnalytics.findMaxWindSpeed(this.readings));
+    }
+
+    public String displayMinWindSpeed() {
+        return String.valueOf(StationAnalytics.findMinWindSpeed(this.readings));
+    }
+
+    public String displayMaxPressure() {
+        return String.valueOf(StationAnalytics.findMaxPressure(this.readings));
+    }
+
+    public String displayMinPressure() {
+        return String.valueOf(StationAnalytics.findMinPressure(this.readings));
     }
 
 

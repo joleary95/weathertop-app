@@ -1,41 +1,70 @@
 <section class="content box">
-  #{list items:_station, as:'station'}
-    <div class="columns">
-      <div class="column">
-        <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
-          <strong class="has-text-white"> ${station.name}</strong>
-        </section>
-      </div>
-      <div class="column">
-        <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
-          <strong class="has-text-white">Weather</strong><br>
-          <p class="has-text-white mt-2">${station.latestReading().weatherDescription()}</p>
-        </section>
+  <div class="columns">
+
+
+    #{list items:_station, as:'station'}
+    <div class="column">
+      <div class="card has-background-black">
+        <div class="card-content">
+          <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
+            <h3 class="has-text-white"> ${station.name}</h3>
+          </section>
         </div>
-      <div class="column">
-        <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
-          <strong class="has-text-white">Temp</strong>
-          <p class="has-text-white mt-2">${station.latestReading().temp} C <br>
-            ${station.latestReading().Fahrenheit()} F </p>
-        </section>
-      </div>
-      <div class="column">
-        <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
-          <strong class="has-text-white ">Wind</strong>
-          <p class="has-text-white mt-2">${station.latestReading().kmToBeaufort()} bft <br>
-            ${station.latestReading().CompassDirection()}<br>
-            feels like<br>
-            ${station.latestReading().windChill()}</p>
-        </section>
-      </div>
-      <div class="column">
-        <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
-          <strong class="has-text-white ">Pressure</strong><br>
-          <p class="has-text-white mt-2">${station.latestReading().pressure} hpa</p>
-        </section>
       </div>
     </div>
-  #{/list}
+    <div class="column">
+      <div class="card has-background-black">
+        <div class="card-content">
+          <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
+            <h4 class="has-text-white">Weather</h4><br>
+            <p class="has-text-white mt-2">${station.latestReading().weatherDescription()}</p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card has-background-black">
+        <div class="card-content">
+          <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
+            <h4 class="has-text-white">Temp</h4>
+            <p class="has-text-white mb-2">
+              ${station.latestReading().temp} C <br>
+              ${station.latestReading().Fahrenheit()} F <br>
+              Max: ${station.displayMaxTemp()} <br>
+              Min: ${station.displayMinTemp()} </p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card has-background-black">
+        <div class="card-content">
+          <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
+            <h4 class="has-text-white mt-1">Wind</h4>
+            <p class="has-text-white mb-2">${station.latestReading().kmToBeaufort()} bft <br>
+              ${station.latestReading().CompassDirection()}<br>
+              feels like<br>
+              ${station.latestReading().windChill()} <br>
+              Max: ${station.displayMaxWindSpeed()} <br>
+              Min: ${station.displayMinWindSpeed()} </p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card has-background-black">
+        <div class="card-content">
+          <section class="box has-background-black is-flex is-flex-direction-column is-justify-content-center" style="width: 100%; height: 150px;">
+            <h4 class="has-text-white ">Pressure</h4><br>
+            <p class="has-text-white mt-2">${station.latestReading().pressure} hpa <br>
+              Max: ${station.displayMaxPressure()}<br>
+              Min: ${station.displayMinPressure()} <br></p>
+          </section>
+        </div>
+      </div>
+    </div>
+    #{/list}
+  </div>
 <table class="table is-bordered is-striped">
   <thead>
   <tr class="subtitle has-background-white-ter">

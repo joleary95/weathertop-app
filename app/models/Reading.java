@@ -1,9 +1,12 @@
 package models;
 
 import utils.Conversions;
+import utils.StationAnalytics;
 import javax.persistence.Entity;
 
 import play.db.jpa.Model;
+
+import java.util.List;
 
 @Entity
 public class Reading extends Model {
@@ -33,6 +36,7 @@ public class Reading extends Model {
 
         return Conversions.celsiusToFahrenheit(this.temp);
     }
+
     public String weatherDescription() {
 
         return Conversions.codeToWeatherDescription(this.code);
@@ -60,6 +64,16 @@ public class Reading extends Model {
         return this.windSpeed;
     }
 
+    public float getTemp() {
+
+        return this.temp;
+    }
+
+    public int getPressure() {
+
+        return this.pressure;
+    }
+
     public int getWindDirection() {
 
         return Math.round(this.windDirection);
@@ -84,6 +98,16 @@ public class Reading extends Model {
     public void setCode(int code) {
 
         this.code = code;
+    }
+
+    public void setTemp(int temp) {
+
+        this.temp = temp;
+    }
+
+    public void setPressure(int pressure) {
+
+        this.pressure = pressure;
     }
 
 }
