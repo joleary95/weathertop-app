@@ -1,58 +1,88 @@
 <section class="content box">
   <div class="columns">
-
-
     #{list items:_station, as:'station'}
     <div class="column">
       <div class="card has-background-black">
         <div class="card-content" style="height: 200px;">
-            <h3 class="has-text-white"> ${station.name}</h3>
-              <p class="has-text-white is-size-7 mt-2">
-                lat:  ${station.latitude} <br>
-                lng: ${station.longitude} </p>
+          <h3 class="has-text-white">
+            ${station.name}
+            <span class="icon has-text-info is-pulled-right">
+              <i class="fas fa-map-marker-alt fa-2x"></i>
+            </span>
+          </h3>
+          <p class="has-text-white is-size-7 mt-2">
+            lat: ${station.latitude} <i class="fas fa-globe has-text-info"></i> <br>
+            lng: ${station.longitude} <i class="fas fa-globe has-text-info"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="column pr-3">
+      <div class="card has-background-black">
+        <div class="card-content" style="height: 200px;">
+          <h4 class="has-text-white">
+            Weather
+            <span class="icon has-text-info is-pulled-right">
+              <i class="fas fa-cloud fa-2x"></i>
+            </span>
+          </h4>
+          <br>
+          <p class="has-text-white mt-2">${station.latestReading().weatherDescription()}</p>
         </div>
       </div>
     </div>
     <div class="column">
       <div class="card has-background-black">
         <div class="card-content" style="height: 200px;">
-            <h4 class="has-text-white">Weather</h4><br>
-            <p class="has-text-white mt-2">${station.latestReading().weatherDescription()}</p>
+          <h4 class="has-text-white">
+            Temp
+            <span class="icon has-text-info is-pulled-right">
+              <i class="fas fa-thermometer-half fa-2x"></i>
+            </span>
+          </h4>
+          <p class="has-text-white is-size-7 mt-2">
+            ${station.latestReading().temp} C <br>
+            ${station.latestReading().Fahrenheit()} F <br>
+            Max: ${station.displayMaxTemp()} <br>
+            Min: ${station.displayMinTemp()}
+          </p>
         </div>
       </div>
     </div>
     <div class="column">
       <div class="card has-background-black">
         <div class="card-content" style="height: 200px;">
-            <h4 class="has-text-white">Temp</h4>
-            <p class="has-text-white is-size-7 mt-2">
-              ${station.latestReading().temp} C <br>
-              ${station.latestReading().Fahrenheit()} F <br>
-              Max: ${station.displayMaxTemp()} <br>
-              Min: ${station.displayMinTemp()} </p>
+          <h4 class="has-text-white">
+            Wind
+            <span class="icon has-text-info is-pulled-right">
+              <i class="fas fa-wind fa-2x"></i>
+            </span>
+          </h4>
+          <p class="has-text-white is-size-7 mt-2">
+            ${station.latestReading().kmToBeaufort()} bft <br>
+            ${station.latestReading().CompassDirection()}<br>
+            feels like<br>
+            ${station.latestReading().windChill()} <br>
+            Max: ${station.displayMaxWindSpeed()} <br>
+            Min: ${station.displayMinWindSpeed()}
+          </p>
         </div>
       </div>
     </div>
     <div class="column">
       <div class="card has-background-black">
         <div class="card-content" style="height: 200px;">
-            <h4 class="has-text-white">Wind</h4>
-            <p class="has-text-white is-size-7 mt-2">${station.latestReading().kmToBeaufort()} bft <br>
-              ${station.latestReading().CompassDirection()}<br>
-              feels like<br>
-              ${station.latestReading().windChill()} <br>
-              Max: ${station.displayMaxWindSpeed()} <br>
-              Min: ${station.displayMinWindSpeed()} </p>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card has-background-black">
-        <div class="card-content" style="height: 200px;">
-            <h4 class="has-text-white ">Pressure</h4><br>
-            <p class="has-text-white is-size-7">${station.latestReading().pressure} hpa <br>
-              Max: ${station.displayMaxPressure()}<br>
-              Min: ${station.displayMinPressure()} <br></p>
+          <h4 class="has-text-white">
+            Pressure
+            <span class="icon has-text-info is-pulled-right">
+              <i class="fas fa-tachometer-alt fa-2x"></i>
+            </span>
+          </h4>
+          <p class="has-text-white is-size-7">
+            ${station.latestReading().pressure} hpa <i class="fas fa-chevron-right has-text-info"></i> <br>
+            Max: ${station.displayMaxPressure()} <i class="fas fa-chevron-up has-text-info"></i> <br>
+            Min: ${station.displayMinPressure()} <i class="fas fa-chevron-down has-text-info"></i>
+          </p>
         </div>
       </div>
     </div>
@@ -61,12 +91,35 @@
 <table class="table is-bordered is-striped">
   <thead>
   <tr class="subtitle has-background-white-ter">
-    <th>Code</th>
-    <th>Temp</th>
-    <th>Wind Speed</th>
-    <th>Wind Direction</th>
-    <th>Pressure</th>
-
+    <th>Code
+      <span class="is-pulled-right">
+        <i class="fas fa-cloud">
+        </i>
+      </span>
+    </th>
+    <th>Temp
+      <span class="is-pulled-right">
+        <i class="fas fa-thermometer-half"></i>
+      </span>
+    </th>
+    <th>Wind Speed
+      <span class="is-pulled-right">
+       <i class="fas fa-wind">
+       </i>
+      </span>
+    </th>
+    <th>Wind Direction
+      <span class="is-pulled-right">
+        <i class="fas fa-compass">
+        </i>
+      </span>
+    </th>
+    <th>Pressure
+      <span class="is-pulled-right">
+        <i class="fas fa-tachometer-alt">
+        </i>
+      </span>
+    </th>
   </tr>
   </thead>
   <tbody>

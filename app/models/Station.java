@@ -43,28 +43,28 @@ public class Station extends Model
 
     }
 
-    public String displayMaxTemp() {
-        return String.valueOf(StationAnalytics.findMaxTemp(this.readings));
+    public float displayMaxTemp() {
+        return StationAnalytics.findMaxTemp(this.readings);
     }
 
-    public String displayMinTemp() {
-        return String.valueOf(StationAnalytics.findMinTemp(this.readings));
+    public float displayMinTemp() {
+        return StationAnalytics.findMinTemp(this.readings);
     }
 
-    public String displayMaxWindSpeed() {
-        return String.valueOf(StationAnalytics.findMaxWindSpeed(this.readings));
+    public float displayMaxWindSpeed() {
+        return StationAnalytics.findMaxWindSpeed(this.readings);
     }
 
-    public String displayMinWindSpeed() {
-        return String.valueOf(StationAnalytics.findMinWindSpeed(this.readings));
+    public float displayMinWindSpeed() {
+        return StationAnalytics.findMinWindSpeed(this.readings);
     }
 
-    public String displayMaxPressure() {
-        return String.valueOf(StationAnalytics.findMaxPressure(this.readings));
+    public int displayMaxPressure() {
+        return StationAnalytics.findMaxPressure(this.readings);
     }
 
-    public String displayMinPressure() {
-        return String.valueOf(StationAnalytics.findMinPressure(this.readings));
+    public int displayMinPressure() {
+        return StationAnalytics.findMinPressure(this.readings);
     }
 
 
