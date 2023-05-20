@@ -16,10 +16,13 @@ public class Station extends Model
 
     @OneToMany(cascade = CascadeType.ALL)
     public List<Reading> readings = new ArrayList<Reading>();
-
-    public Station(String name) {
+    public float latitude;
+    public float longitude;
+    public Station(String name, float latitude, float longitude) {
 
         this.name = name;
+        this.longitude = longitude;
+        this.latitude = latitude;
     }
 
     public Station() {
@@ -27,9 +30,9 @@ public class Station extends Model
     }
 
     public String getName() {
-
         return name;
     }
+
     public Reading latestReading() {
 
         if (readings.size() != 0) {

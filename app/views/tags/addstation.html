@@ -1,10 +1,28 @@
 <form action="/dashboard/addStation" method="POST">
-  <div class="field">
-    <label class="label">Title</label>
-    <div class="control">
-      <label>
-        <input class="input" placeholder="Title" type="text" name="name">
-      </label>
+  <div class="columns">
+    <div class="column">
+      <div class="field">
+        <label class="label">Title</label>
+        <div class="control">
+          <input class="input" placeholder="Title" type="text" name="name">
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="field">
+        <label class="label">Latitude</label>
+        <div class="control">
+          <input class="input" placeholder="Latitude" type="text" name="latitude">
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="field">
+        <label class="label">Longitude</label>
+        <div class="control">
+          <input class="input" placeholder="Longitude" type="text" name="longitude">
+        </div>
+      </div>
     </div>
   </div>
   <div class="field mt-4">

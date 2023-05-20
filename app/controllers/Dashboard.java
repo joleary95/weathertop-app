@@ -29,10 +29,10 @@ public class Dashboard extends Controller
     redirect ("/dashboard");
   }
 
-  public static void addStation(String name)
+  public static void addStation(String name, float longitude, float latitude)
   {
     Member member = Accounts.getLoggedInMember();
-    Station station = new Station(name);
+    Station station = new Station(name, latitude, longitude);
     member.stations.add(station);
     Logger.info ("Adding a new station called " + name);
     member.save();
