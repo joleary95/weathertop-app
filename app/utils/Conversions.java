@@ -36,7 +36,7 @@ public class Conversions extends Utils{
 
     public static String codeToWeatherDescription(int code) {
 
-        // code is in numerical order of increasing by 100. dividing by 100 to make the code more readable.
+        // code is in numerical order increasing by 100. dividing by 100 to make the code more readable.
 
         switch (code/100) {
             case 1:
