@@ -5,15 +5,15 @@
 #{menu id:"dashboard"/}
 
 #{list items:stations, as:'station'}
-<section class="content box">
-  <h2 class="ui-header">
+<section class="content box has-background-light">
+  <h2 class="title is-4 has-text-dark">
     ${station.name}
-    <span class="icon is-large -is-pulled right">
-    <img src="public/images/satellite.gif" alt="Satellite Reading">
-  </span>
+    <span class="icon">
+      <i class="fas fa-satellite"></i>
+    </span>
   </h2>
-  <p>
-    latitude:  ${station.latitude}<br>
+  <p class="has-text-grey">
+    latitude: ${station.latitude}<br>
     longitude: ${station.longitude} <br>
   </p>
   <a href="/stations/${station.id}" class="icon has-text-primary">
@@ -24,7 +24,7 @@
   </a>
 </section>
 #{/list}
-
 #{addstation /}
+
 
 

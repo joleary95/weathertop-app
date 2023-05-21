@@ -1,31 +1,31 @@
 <form action="/stations/${_station.id}/addReadings" method="POST">
   <div class="columns">
     <div class="field column">
-      <label class="label">Code</label>
+      <label class="label"><span class="icon"><i class="fas fa-code"></i></span> Code</label>
       <div class="control">
         <input class="input" placeholder="Code" type="text" name="code">
       </div>
     </div>
     <div class="field column">
-      <label class="label">Temperature</label>
+      <label class="label"><span class="icon"><i class="fas fa-thermometer-half"></i></span> Temperature</label>
       <div class="control">
         <input class="input" placeholder="Temperature" type="text" name="temp">
       </div>
     </div>
     <div class="field column">
-      <label class="label">Wind Speed</label>
+      <label class="label"><span class="icon"><i class="fas fa-wind"></i></span> Wind Speed</label>
       <div class="control">
         <input class="input" placeholder="WindSpeed" type="text" name="windSpeed">
       </div>
     </div>
     <div class="field column">
-      <label class="label">Wind Direction</label>
+      <label class="label"><span class="icon"><i class="fas fa-compass"></i></span> Wind Direction</label>
       <div class="control">
         <input class="input" placeholder="WindDirection" type="text" name="windDirection">
       </div>
     </div>
     <div class="field column">
-      <label class="label">Pressure</label>
+      <label class="label"><span class="icon"><i class="fas fa-tachometer-alt"></i></span> Pressure</label>
       <div class="control">
         <input class="input" placeholder="Pressure" type="number" name="pressure">
       </div>
@@ -33,7 +33,7 @@
   </div>
   <div class="field mt-4">
     <div class="control">
-      <button class="button is-info">Add Readings</button>
+      <button class="button is-info"><span class="icon"><i class="fas fa-plus"></i></span> Add Readings</button>
     </div>
   </div>
 </form>

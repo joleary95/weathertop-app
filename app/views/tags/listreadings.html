@@ -1,10 +1,10 @@
-<section class="content box">
+<section class="content box has-background-light">
   <div class="columns">
     #{list items:_station, as:'station'}
     <div class="column">
-      <div class="card has-background-black">
+      <div class="card has-background-black has-text-white">
         <div class="card-content" style="height: 200px;">
-          <h3 class="has-text-white">
+          <h3 class="title is-5 has-text-white">
             ${station.name}
             <span class="icon has-text-info is-pulled-right">
               <i class="fas fa-map-marker-alt fa-2x"></i>
@@ -18,9 +18,9 @@
       </div>
     </div>
     <div class="column pr-3">
-      <div class="card has-background-black">
+      <div class="card has-background-black has-text-white">
         <div class="card-content" style="height: 200px;">
-          <h4 class="has-text-white">
+          <h4 class="title is-6 has-text-white">
             Weather
             <span class="icon has-text-info is-pulled-right">
               <i class="fas fa-cloud fa-2x"></i>
@@ -32,9 +32,9 @@
       </div>
     </div>
     <div class="column">
-      <div class="card has-background-black">
+      <div class="card has-background-black has-text-white">
         <div class="card-content" style="height: 200px;">
-          <h4 class="has-text-white">
+          <h4 class="title is-6 has-text-white">
             Temp
             <span class="icon has-text-danger is-pulled-right">
               <i class="fas fa-thermometer-half fa-2x"></i>
@@ -50,9 +50,9 @@
       </div>
     </div>
     <div class="column">
-      <div class="card has-background-black">
-        <div class="card-content" style="height: 200px;">
-          <h4 class="has-text-white">
+      <div class="card has-background-black has-text-white">
+        <div class="card-content " style="height: 200px;">
+          <h4 class="title is-6 has-text-white">
             Wind
             <span class="icon has-text-info is-pulled-right">
               <i class="fas fa-wind fa-2x"></i>
@@ -70,9 +70,9 @@
       </div>
     </div>
     <div class="column">
-      <div class="card has-background-black">
+      <div class="card has-background-black has-text-white">
         <div class="card-content" style="height: 200px;">
-          <h4 class="has-text-white">
+          <h4 class="title is-6 has-text-white">
             Pressure
             <span class="icon has-text-info is-pulled-right">
               <i class="fas fa-tachometer-alt fa-2x"></i>
@@ -88,66 +88,62 @@
     </div>
     #{/list}
   </div>
-<table class="table is-bordered is-striped">
-  <thead>
-  <tr class="subtitle has-background-white-ter">
-    <th>Code
-      <span class="is-pulled-right">
-        <i class="fas fa-cloud">
-        </i>
-      </span>
-    </th>
-    <th>Temp
-      <span class="is-pulled-right">
-        <i class="fas fa-thermometer-half"></i>
-      </span>
-    </th>
-    <th>Wind Speed
-      <span class="is-pulled-right">
-       <i class="fas fa-wind">
-       </i>
-      </span>
-    </th>
-    <th>Wind Direction
-      <span class="is-pulled-right">
-        <i class="fas fa-compass">
-        </i>
-      </span>
-    </th>
-    <th>Pressure
-      <span class="is-pulled-right">
-        <i class="fas fa-tachometer-alt">
-        </i>
-      </span>
-    </th>
-    <th>Remove</th>
-  </tr>
-  </thead>
-  <tbody>
-  #{list items:_station.readings, as:'reading'}
-  <tr>
-    <td>
-     ${reading.code}
-  </td>
-    <td>
-      ${reading.temp}
-    </td>
-    <td>
-      ${reading.windSpeed}
-    </td>
-    <td>
-      ${reading.windDirection}
-    </td>
-    <td>
-      ${reading.pressure}
-    </td>
-    <td>
-      <a href="/stations/${_station.id}/deletereading/${reading.id}" class="icon has-text-danger">
-        <i class="fas fa-trash"></i>
-      </a>
-    </td>
-  </tr>
-  #{/list}
-  </tbody>
-</table>
+  <table class="table is-bordered is-striped">
+    <thead>
+    <tr class="subtitle has-background-white-ter">
+      <th>Code
+        <span class="is-pulled-right">
+            <i class="fas fa-cloud"></i>
+          </span>
+      </th>
+      <th>Temp
+        <span class="is-pulled-right">
+            <i class="fas fa-thermometer-half"></i>
+          </span>
+      </th>
+      <th>Wind Speed
+        <span class="is-pulled-right">
+            <i class="fas fa-wind"></i>
+          </span>
+      </th>
+      <th>Wind Direction
+        <span class="is-pulled-right">
+            <i class="fas fa-compass"></i>
+          </span>
+      </th>
+      <th>Pressure
+        <span class="is-pulled-right">
+            <i class="fas fa-tachometer-alt"></i>
+          </span>
+      </th>
+      <th>Remove</th>
+    </tr>
+    </thead>
+    <tbody>
+    #{list items:_station.readings, as:'reading'}
+    <tr>
+      <td>
+        ${reading.code}
+      </td>
+      <td>
+        ${reading.temp}
+      </td>
+      <td>
+        ${reading.windSpeed}
+      </td>
+      <td>
+        ${reading.windDirection}
+      </td>
+      <td>
+        ${reading.pressure}
+      </td>
+      <td>
+        <a href="/stations/${_station.id}/deletereading/${reading.id}" class="icon has-text-danger">
+          <i class="fas fa-trash"></i>
+        </a>
+      </td>
+    </tr>
+    #{/list}
+    </tbody>
+  </table>
 </section>
