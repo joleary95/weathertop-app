@@ -69,5 +69,4 @@ public class Station extends Model {
         return StationAnalytics.findMinPressure(this.readings);
     }
 
-
 }
