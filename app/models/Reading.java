@@ -82,8 +82,6 @@ public class Reading extends Model {
         return this.code;
     }
 
-
-
     //Setters
     public void setWindSpeed(float windSpeed) {
 

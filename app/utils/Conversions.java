@@ -7,21 +7,12 @@ import java.util.List;
 
 public class Conversions extends Utils{
 
-    public static float celsiusToFahrenheit(float temp) {
+    public static float celsiusToFahrenheit(float temp) {           //Celsius to fahrenheit Calculation
 
         return (temp * 9 / 5) + 32;
     }
 
-    public static float findMaxTemp(List<Reading> readings) {
-        float maxTemp = Float.MIN_VALUE;
-        for (Reading reading : readings) {
-            if (reading.temp > maxTemp) {
-                maxTemp = reading.temp;
-            }
-        }
-        return maxTemp;
-    }
-    public static int KmToBeaufort(double km) {
+    public static int KmToBeaufort(double km) {                           // KM to the Beaufort Scale
 
         double [] beaufortScaleConversion = {1,6,12,20,29,39,50,62,75,89,103} ;
 
@@ -29,12 +20,11 @@ public class Conversions extends Utils{
             if(km < beaufortScaleConversion[i]) {
                 return i;
             }
-
             }
         return 12;
         }
 
-    public static String codeToWeatherDescription(int code) {
+    public static String codeToWeatherDescription(int code) {              // Converting code to Description
 
         // code is in numerical order increasing by 100. dividing by 100 to make the code more readable.
 
@@ -83,7 +73,7 @@ public class Conversions extends Utils{
 
     public static double getWindChill(float temp, double v) {
 
-        double windChill = 13.12 + (0.6215 * temp) - (11.37 * Math.pow(v, 0.16)) +
+        double windChill = 13.12 + (0.6215 * temp) - (11.37 * Math.pow(v, 0.16)) +    // Calculating WindChill
                 (0.3965 * temp * Math.pow(v, 0.16));
 
         return Math.round(windChill*100.0)/100.0;

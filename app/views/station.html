@@ -9,11 +9,10 @@
     ${station.name} <br>
   </h1>
   #{if station.readings.size() > 0}
-  #{listreadings station:station /}
+    #{listreadings station:station /}
   #{/if}
   #{else}
-  <p>No readings added.</p>
+    <p>No readings added.</p>
   #{/else}
   #{addreadings station:station /}
-
 </section>
