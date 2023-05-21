@@ -2,6 +2,7 @@ package models;
 
 import utils.Conversions;
 import utils.StationAnalytics;
+
 import javax.persistence.Entity;
 
 import play.db.jpa.Model;
@@ -17,9 +18,7 @@ public class Reading extends Model {
     public int windDirection;
 
 
-    public Reading(int code, float temp, float windSpeed, int pressure,
-                    int windDirection)
-    {
+    public Reading(int code, float temp, float windSpeed, int pressure, int windDirection) {
         this.code = code;
         this.temp = temp;
         this.windSpeed = windSpeed;
@@ -27,6 +26,7 @@ public class Reading extends Model {
         this.windDirection = windDirection;
 
     }
+
     public Reading() {
     }
 
@@ -87,6 +87,7 @@ public class Reading extends Model {
 
         this.windSpeed = windSpeed;
     }
+
     public void setWindDirection(int windDirection) {
 
         this.windDirection = windDirection;

@@ -5,14 +5,14 @@
 #{menu id:"dashboard"/}
 
 <section class="ui segment m-2">
-  <h1 class="title">
-    ${station.name} <br>
-  </h1>
-  #{if station.readings.size() > 0}
+    <h1 class="title">
+        ${station.name} <br>
+    </h1>
+    #{if station.readings.size() > 0}
     #{listreadings station:station /}
-  #{/if}
-  #{else}
+    #{/if}
+    #{else}
     <p>No readings added.</p>
-  #{/else}
-  #{addreadings station:station /}
+    #{/else}
+    #{addreadings station:station /}
 </section>
